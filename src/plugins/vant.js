@@ -6,7 +6,9 @@ import {
   Tab,
   Tabs,
   Panel,
-  Dialog 
+  Dialog,
+  Sticky,
+  Lazyload  
 } from 'vant'
 
 Vue.use(NavBar)
@@ -16,3 +18,5 @@ Vue.use(Tab)
 Vue.use(Tabs)
 Vue.use(Panel)
 Vue.use(Dialog)
+Vue.use(Sticky)
+Vue.use(Lazyload)
