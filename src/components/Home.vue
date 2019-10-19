@@ -1,19 +1,13 @@
 <template>
-<<<<<<< HEAD
-  <div class="home">
-    <!-- 头部 -->
-    <van-nav-bar left-arrow class="head" :fixed="true">
-=======
+
   <div class="home" ref="home">
     <!-- 头部 -->
-    <van-nav-bar left-arrow class="head">
->>>>>>> ed07e9dd768427f5d432e5e80a54ac268acbe76c
+    <van-nav-bar left-arrow class="head" @click-right="goSearch">
       <van-icon name="envelop-o" slot="left" class="home-left" />
       <img src="../assets/images/logo.png" width="182" height="52" slot="title" class="home-title" />
       <van-icon name="search" slot="right" class="home-right" />
     </van-nav-bar>
     <!-- 导航 -->
-<<<<<<< HEAD
     <van-tabs
       class="nav"
       background="#F4F5F6"
@@ -76,7 +70,7 @@ export default {
       >
         <van-tab v-for="(item, index) in tab" :key="index" :title="item" class="nav-tab">
           <section class="container">
-            <div class="item" v-for="item in list" :key="item.uniquekey">
+            <div class="item" v-for="item in list" :key="item.uniquekey" @click="go(item.url)">
               <h3>{{item.title}}</h3>
               <div class="img">
                 <div>
@@ -151,6 +145,15 @@ export default {
       this.list = res.data
       console.log(this.list)
     })
+    },
+    //进入搜索页面
+    goSearch(){
+      this.$router.push('/search');
+    },
+    //跳转详情页
+    go(url){
+      console.log(url);
+      location.assign(url);
     }
   },
   beforeMount: function() {
@@ -158,7 +161,6 @@ export default {
 
   }
 }
->>>>>>> ed07e9dd768427f5d432e5e80a54ac268acbe76c
 </script>
 <style lang="less" scoped>
 .home {
@@ -177,10 +179,6 @@ export default {
   }
 }
 .nav {
-<<<<<<< HEAD
-  margin-top: 90px;
-=======
->>>>>>> ed07e9dd768427f5d432e5e80a54ac268acbe76c
   .container {
     padding: 0 23px;
     box-sizing: border-box;
@@ -197,13 +195,6 @@ export default {
       padding-bottom: 30px;
     }
     .item .img {
-<<<<<<< HEAD
-      display: flex;
-      justify-content: space-around;
-      padding-bottom: 26px;
-      img {
-        flex: 1;
-=======
       padding-bottom: 26px;
       display: flex;
       justify-content: space-around;
@@ -213,7 +204,6 @@ export default {
         img {
           width: 100%;
         }
->>>>>>> ed07e9dd768427f5d432e5e80a54ac268acbe76c
       }
       :first-child {
         margin-right: 28px;
