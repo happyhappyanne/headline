@@ -1,7 +1,7 @@
 <template>
   <div class="home" ref="home">
     <!-- 头部 -->
-    <van-nav-bar left-arrow class="head">
+    <van-nav-bar left-arrow class="head" @click-right="goSearch">
       <van-icon name="envelop-o" slot="left" class="home-left" />
       <img src="../assets/images/logo.png" width="182" height="52" slot="title" class="home-title" />
       <van-icon name="search" slot="right" class="home-right" />
@@ -19,7 +19,7 @@
       >
         <van-tab v-for="(item, index) in tab" :key="index" :title="item" class="nav-tab">
           <section class="container">
-            <div class="item" v-for="item in list" :key="item.uniquekey">
+            <div class="item" v-for="item in list" :key="item.uniquekey" @click="go(item.url)">
               <h3>{{item.title}}</h3>
               <div class="img">
                 <div>
@@ -94,6 +94,15 @@ export default {
       this.list = res.data
       console.log(this.list)
     })
+    },
+    //进入搜索页面
+    goSearch(){
+      this.$router.push('/search');
+    },
+    //跳转详情页
+    go(url){
+      console.log(url);
+      location.assign(url);
     }
   },
   beforeMount: function() {
