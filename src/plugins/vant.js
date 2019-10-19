@@ -11,6 +11,7 @@ import {
   Lazyload,
   Search,
   Toast   
+
 } from 'vant'
 
 Vue.use(NavBar)
@@ -22,5 +23,5 @@ Vue.use(Panel)
 Vue.use(Dialog)
 Vue.use(Sticky)
 Vue.use(Lazyload)
-Vue.use(Search)
-Vue.use(Toast)
+
+
