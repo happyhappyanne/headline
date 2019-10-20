@@ -7,7 +7,6 @@
       <van-icon name="search" slot="right" class="home-right" />
     </van-nav-bar>
     <!-- 导航 -->
-    <!-- <van-sticky> -->
       <van-tabs
         class="nav"
         background="#F4F5F6"
@@ -37,7 +36,6 @@
           </section>
         </van-tab>
       </van-tabs>
-    <!-- </van-sticky> -->
   </div>
 </template>
 <script>
