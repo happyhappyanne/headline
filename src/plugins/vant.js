@@ -10,7 +10,7 @@ import {
   Sticky,
   Lazyload,
   Search,
-  Toast   
+  Toast
 } from 'vant'
 
 Vue.use(NavBar)
