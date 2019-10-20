@@ -8,57 +8,6 @@
       <van-icon name="search" slot="right" class="home-right" />
     </van-nav-bar>
     <!-- 导航 -->
-    <van-tabs
-      class="nav"
-      background="#F4F5F6"
-      :swipeable="true"
-      title-active-color="#4C6FDA"
-      color="#4C6FDA"
-    >
-      <van-tab v-for="item in tab" :title="item" class="nav-tab">
-        <section class="container">
-          <div class="item" v-for="item in list">
-            <h3>{{item.title}}</h3>
-            <div class="img">
-              <img src="{{item.thumbnail_pic_s}}" alt />
-              <img src="{{itemt.humbnail_pic_s02}}" alt />
-            </div>
-            <p>
-              <span>时间：{{item.date}}</span>
-              <span>作者：{{item.author}}</span>
-            </p>
-          </div>
-        </section>
-      </van-tab>
-    </van-tabs>
-    {{list}}
-  </div>
-</template>
-<script>
-import { async } from "q";
-export default {
-  data: function() {
-    return {
-      tab: ["头条", "社会", "国内", "国际", "娱乐", "体育", "科技"],
-      list: []
-    };
-  },
-  methods: {},
-  beforeMount: function() {
-    this.$http.get("/top").then(res => {
-      // console.log(res);
-      // 请求失败
-      if (res.status !== 200) {
-        alert('加载失败');
-        return;
-    }
-    this.list = res.data;
-
-    });
-  }
-};
-=======
-    <!-- <van-sticky> -->
       <van-tabs
         class="nav"
         background="#F4F5F6"
@@ -88,7 +37,6 @@ export default {
           </section>
         </van-tab>
       </van-tabs>
-    <!-- </van-sticky> -->
   </div>
 </template>
 <script>
