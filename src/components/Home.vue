@@ -14,18 +14,24 @@
       :swipeable="true"
       title-active-color="#4C6FDA"
       color="#4C6FDA"
+      sticky
+-     @change="current"
     >
       <van-tab v-for="(item, index) in tab" :key="index" :title="item" class="nav-tab">
         <section class="container">
-          <div class="item" v-for="item in list" :key="item.uniquekey">
+          <div class="item" v-for="item in list" :key="item.uniquekey" @click="go(item.url)">
             <h3>{{item.title}}</h3>
             <div class="img">
-              <img :src="item.thumbnail_pic_s" alt />
-              <img :src="itemt.humbnail_pic_s02" alt />
+              <div>
+-                  <van-image lazy-load width="170" :src="item.thumbnail_pic_s" alt />
+-                </div>
+-                <div>
+-                  <van-image lazy-load width="170" :src="item.thumbnail_pic_s02" alt />
+-                </div>
             </div>
             <p>
               <span>时间：{{item.date}}</span>
-              <span>作者：{{item.author}}</span>
+              <span>作者：{{item.author_name}}</span>
             </p>
           </div>
         </section>
