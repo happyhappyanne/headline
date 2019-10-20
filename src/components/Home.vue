@@ -8,35 +8,35 @@
       <van-icon name="search" slot="right" class="home-right" />
     </van-nav-bar>
     <!-- 导航 -->
-    <van-tabs
-      class="nav"
-      background="#F4F5F6"
-      :swipeable="true"
-      title-active-color="#4C6FDA"
-      color="#4C6FDA"
-      sticky
--     @change="current"
-    >
-      <van-tab v-for="(item, index) in tab" :key="index" :title="item" class="nav-tab">
-        <section class="container">
-          <div class="item" v-for="item in list" :key="item.uniquekey" @click="go(item.url)">
-            <h3>{{item.title}}</h3>
-            <div class="img">
-              <div>
--                  <van-image lazy-load width="170" :src="item.thumbnail_pic_s" alt />
--                </div>
--                <div>
--                  <van-image lazy-load width="170" :src="item.thumbnail_pic_s02" alt />
--                </div>
+      <van-tabs
+        class="nav"
+        background="#F4F5F6"
+        :swipeable="true"
+        title-active-color="#4C6FDA"
+        color="#4C6FDA"
+        sticky
+        @change="current"
+      >
+        <van-tab v-for="(item, index) in tab" :key="index" :title="item" class="nav-tab">
+          <section class="container">
+            <div class="item" v-for="item in list" :key="item.uniquekey" @click="go(item.url)">
+              <h3>{{item.title}}</h3>
+              <div class="img">
+                <div>
+                  <van-image lazy-load width="170" :src="item.thumbnail_pic_s" alt />
+                </div>
+                <div>
+                  <van-image lazy-load width="170" :src="item.thumbnail_pic_s02" alt />
+                </div>
+              </div>
+              <p>
+                <span>时间：{{item.date}}</span>&nbsp;&nbsp;
+                <span>作者：{{item.author_name}}</span>
+              </p>
             </div>
-            <p>
-              <span>时间：{{item.date}}</span>
-              <span>作者：{{item.author_name}}</span>
-            </p>
-          </div>
-        </section>
-      </van-tab>
-    </van-tabs>
+          </section>
+        </van-tab>
+      </van-tabs>
   </div>
 </template>
 <script>
